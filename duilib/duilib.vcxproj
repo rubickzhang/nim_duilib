@@ -121,8 +121,8 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\;..\..\skia\;..\..\SDL3\include\;..\duilib\third_party\libcef_win\;</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;SK_GANESH;SK_GL;SK_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\;..\..\skia\skia\;..\..\SDL3\include\;..\duilib\third_party\libcef_win\;..\duilib\third_party\libpng</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;SK_GANESH;SK_GL;SK_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -237,7 +237,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\;..\..\skia\;..\..\SDL3\include\;..\duilib\third_party\libcef_win\;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\..\skia\skia\;..\..\SDL3\include\;..\duilib\third_party\libcef_win\;..\duilib\third_party\libpng</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;SK_GANESH;SK_GL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -341,19 +341,25 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\skia\tools\gpu\gl\win\SkWGL_win.cpp">
+    <ClCompile Include="..\..\skia\skia\src\codec\SkPngCodec.cpp" />
+    <ClCompile Include="..\..\skia\skia\src\codec\SkPngCodecBase.cpp" />
+    <ClCompile Include="..\..\skia\skia\src\codec\SkPngCompositeChunkReader.cpp" />
+    <ClCompile Include="..\..\skia\skia\src\gpu\ganesh\gl\GrGLInterfaceAutogen.cpp" />
+    <ClCompile Include="..\..\skia\skia\src\gpu\ganesh\gl\GrGLUtil.cpp" />
+    <ClCompile Include="..\..\skia\skia\src\ports\SkScalerContext_win_dw.cpp" />
+    <ClCompile Include="..\..\skia\skia\tools\gpu\gl\win\SkWGL_win.cpp">
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">TurnOffAllWarnings</WarningLevel>
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">TurnOffAllWarnings</WarningLevel>
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">TurnOffAllWarnings</WarningLevel>
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">TurnOffAllWarnings</WarningLevel>
     </ClCompile>
-    <ClCompile Include="..\..\skia\tools\window\GLWindowContext.cpp">
+    <ClCompile Include="..\..\skia\skia\tools\window\GLWindowContext.cpp">
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">TurnOffAllWarnings</WarningLevel>
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">TurnOffAllWarnings</WarningLevel>
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">TurnOffAllWarnings</WarningLevel>
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">TurnOffAllWarnings</WarningLevel>
     </ClCompile>
-    <ClCompile Include="..\..\skia\tools\window\WindowContext.cpp">
+    <ClCompile Include="..\..\skia\skia\tools\window\WindowContext.cpp">
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">TurnOffAllWarnings</WarningLevel>
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">TurnOffAllWarnings</WarningLevel>
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">TurnOffAllWarnings</WarningLevel>
@@ -542,11 +548,16 @@
     <ClCompile Include="Utils\WinImplBase.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\skia\tools\gpu\gl\win\SkWGL.h" />
-    <ClInclude Include="..\..\skia\tools\window\DisplayParams.h" />
-    <ClInclude Include="..\..\skia\tools\window\GLWindowContext.h" />
-    <ClInclude Include="..\..\skia\tools\window\RasterWindowContext.h" />
-    <ClInclude Include="..\..\skia\tools\window\WindowContext.h" />
+    <ClInclude Include="..\..\skia\skia\src\codec\SkPngCodec.h" />
+    <ClInclude Include="..\..\skia\skia\src\codec\SkPngCodecBase.h" />
+    <ClInclude Include="..\..\skia\skia\src\codec\SkPngCompositeChunkReader.h" />
+    <ClInclude Include="..\..\skia\skia\src\gpu\ganesh\gl\GrGLUtil.h" />
+    <ClInclude Include="..\..\skia\skia\src\ports\SkScalerContext_win_dw.h" />
+    <ClInclude Include="..\..\skia\skia\tools\gpu\gl\win\SkWGL.h" />
+    <ClInclude Include="..\..\skia\skia\tools\window\DisplayParams.h" />
+    <ClInclude Include="..\..\skia\skia\tools\window\GLWindowContext.h" />
+    <ClInclude Include="..\..\skia\skia\tools\window\RasterWindowContext.h" />
+    <ClInclude Include="..\..\skia\skia\tools\window\WindowContext.h" />
     <ClInclude Include="Animation\AnimationManager.h" />
     <ClInclude Include="Animation\AnimationPlayer.h" />
     <ClInclude Include="Box\HBox.h" />

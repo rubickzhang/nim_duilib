@@ -132,19 +132,27 @@
 2. 本项目是直接在NIM_Duilib_Framework项目的基础上继续开发的，项目地址：[NIM_Duilib_Framework](https://github.com/netease-im/NIM_Duilib_Framework/)
 
 ## 获取代码和编译（Windows平台）
-1. 设置工作目录：`D:\develop\skia\`    
-2. 获取并编译Skia库（nim_duilib内部使用Skia作为界面绘制引擎，所以先要编译skia）：    
-（1）注意事项：skia源码应该与nim_duilib源码位于相同的目录下，目录结构：`D:\develop\skia\`  
-（2）获取skia代码的编译方法和修改的代码：`git clone https://github.com/rhett-lee/skia_compile`    
-（3）编译skia源码：按照skia_compile目录中的[Windows下编译skia.md文档](https://github.com/rhett-lee/skia_compile/blob/main/Windows%E4%B8%8B%E7%BC%96%E8%AF%91skia.md)中的方法，编译出skia相关的.lib文件    
-　　　注意事项：skia源码编译的时候，应使用LLVM编译，程序运行比较流畅；如果使用VS编译，运行速度很慢，界面比较卡    
-　　　检查方法：编译成功以后，在`skia/out`的子目录下，有生成`skia.lib`等lib文件    
-3. 获取项目代码：`git clone https://github.com/rhett-lee/nim_duilib`
-4. 编译nim_duilib：进入 `nim_duilib/examples` 目录，使用 Visual Studio 2022版本的 IDE 打开 `examples.sln`，选择编译选项为Debug|x64或者Release|x64，按下 F7 即可编译所有示例程序（编译完成的示例程序位于bin目录中）
+1、安装depot_tools;
+mkdir project
+cd project
+gclient fetch skia
+2、如果网络存在问题，则输入glient sync；
+3、编译skia源码：按照skia_compile目录中的[Windows下编译skia.md文档](https://github.com/rhett-lee/skia_compile/blob/main/Windows%E4%B8%8B%E7%BC%96%E8%AF%91skia.md)中的方法，编译出skia相关的.lib文件
+4、在通过ninja编译32位skia.lib时，需要找到gn文件中包含SetEnv.bat, 并注释改行；
 5. 编译附件说明：    
 （1）项目中工程的编译环境为Visual Studio 2022版本，如果使用其他版本的Visual Studio编译器，需要手动更新编译工程的属性。    
 （2）项目中的工程默认配置是x64的，如果需要编译Win32的程序，在编译skia的时候，也需要启动32位的命令行（x86 Native Tools Command Prompt for VS 2022）   
-（3）nim_duilib的代码兼容性默认是支持Win7以上系统，未支持Windows XP；Windows SDK的兼容性配置可在[duilib\duilib_config.h](duilib/duilib_config.h)文件中修改。     
+（3）nim_duilib的代码兼容性默认是支持Win7以上系统，未支持Windows XP；Windows SDK的兼容性配置可在[duilib\duilib_config.h](duilib/duilib_config.h)文件中修改。  
+（4） 注意目录结构为：
+project
+	skia
+		skia
+			src
+			....
+	nim_duilib
+		bin
+		duilib
+		......
 
 ## 获取代码和编译（Linux平台）
 1. 设置工作目录：`/home/develop/`    

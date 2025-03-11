@@ -28,14 +28,14 @@
             #ifdef  _WIN64
                 #pragma comment (lib, "../../../skia/out/LLVM.x64.Debug/skia.lib")
             #else
-                #pragma comment (lib, "../../../skia/out/LLVM.x86.Debug/skia.lib")
+                #pragma comment (lib, "../../../skia/skia/out/LLVM.x86.Debug/skia.lib")
             #endif //_WIN64    
         #else
             //Release版本
             #ifdef  _WIN64
                 #pragma comment (lib, "../../../skia/out/LLVM.x64.Release/skia.lib")
             #else
-                #pragma comment (lib, "../../../skia/out/LLVM.x86.Release/skia.lib")
+                #pragma comment (lib, "../../../skia/skia/out/LLVM.x86.Release/skia.lib")
             #endif //_WIN64    
         #endif //_DEBUG
     #else

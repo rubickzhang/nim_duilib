@@ -426,13 +426,13 @@
     <ClCompile Include="Utils\FilePathUtil.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\skia\tools\window\WindowContext.cpp">
+    <ClCompile Include="..\..\skia\skia\tools\window\WindowContext.cpp">
       <Filter>RenderSkia\Skia</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\skia\tools\window\GLWindowContext.cpp">
+    <ClCompile Include="..\..\skia\skia\tools\window\GLWindowContext.cpp">
       <Filter>RenderSkia\Skia</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\skia\tools\gpu\gl\win\SkWGL_win.cpp">
+    <ClCompile Include="..\..\skia\skia\tools\gpu\gl\win\SkWGL_win.cpp">
       <Filter>RenderSkia\Skia</Filter>
     </ClCompile>
     <ClCompile Include="RenderSkia\Render_Skia_SDL.cpp">
@@ -626,6 +626,24 @@
     </ClCompile>
     <ClCompile Include="CEFControl\CefControl.cpp">
       <Filter>CEFControl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\skia\skia\src\ports\SkScalerContext_win_dw.cpp">
+      <Filter>RenderSkia\Skia</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\skia\skia\src\codec\SkPngCodec.cpp">
+      <Filter>RenderSkia\Skia</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\skia\skia\src\codec\SkPngCodecBase.cpp">
+      <Filter>RenderSkia\Skia</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\skia\skia\src\codec\SkPngCompositeChunkReader.cpp">
+      <Filter>RenderSkia\Skia</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\skia\skia\src\gpu\ganesh\gl\GrGLInterfaceAutogen.cpp">
+      <Filter>RenderSkia\Skia</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\skia\skia\src\gpu\ganesh\gl\GrGLUtil.cpp">
+      <Filter>RenderSkia\Skia</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1121,19 +1139,19 @@
     <ClInclude Include="Utils\FilePathUtil.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\skia\tools\window\DisplayParams.h">
+    <ClInclude Include="..\..\skia\skia\tools\window\DisplayParams.h">
       <Filter>RenderSkia\Skia</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\skia\tools\window\WindowContext.h">
+    <ClInclude Include="..\..\skia\skia\tools\window\WindowContext.h">
       <Filter>RenderSkia\Skia</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\skia\tools\window\GLWindowContext.h">
+    <ClInclude Include="..\..\skia\skia\tools\window\GLWindowContext.h">
       <Filter>RenderSkia\Skia</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\skia\tools\window\RasterWindowContext.h">
+    <ClInclude Include="..\..\skia\skia\tools\window\RasterWindowContext.h">
       <Filter>RenderSkia\Skia</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\skia\tools\gpu\gl\win\SkWGL.h">
+    <ClInclude Include="..\..\skia\skia\tools\gpu\gl\win\SkWGL.h">
       <Filter>RenderSkia\Skia</Filter>
     </ClInclude>
     <ClInclude Include="RenderSkia\Render_Skia_SDL.h">
@@ -1294,6 +1312,21 @@
     </ClInclude>
     <ClInclude Include="CEFControl\CefControl.h">
       <Filter>CEFControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\skia\skia\src\ports\SkScalerContext_win_dw.h">
+      <Filter>RenderSkia\Skia</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\skia\skia\src\codec\SkPngCodec.h">
+      <Filter>RenderSkia\Skia</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\skia\skia\src\codec\SkPngCodecBase.h">
+      <Filter>RenderSkia\Skia</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\skia\skia\src\codec\SkPngCompositeChunkReader.h">
+      <Filter>RenderSkia\Skia</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\skia\skia\src\gpu\ganesh\gl\GrGLUtil.h">
+      <Filter>RenderSkia\Skia</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
